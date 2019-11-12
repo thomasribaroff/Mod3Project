@@ -11,6 +11,15 @@ import numpy as np
 from scipy import stats
 import math
 
+def vcp(borough = 'Camden', year='2011', month='01',):
+    
+    data = pd.read_csv('London Crime Data 2011 to 2014/{}-{}-metropolitan-street.csv'.format(year,month))
+            
+    return len(data.loc[(data['LSOA name'].str.contains("Camden")) & \
+                     ((data['Crime type'] == "Violent crime")|(data['Crime type'] == "Violence and sexual offences"))])/ \
+                            len(data.loc[(data['LSOA name'].str.contains("Camden"))])
+            
+
 def create_sample_dists(cleaned_data, y_var=None, categories=[]):
     """
     Each hypothesis test will require you to create a sample distribution from your data
