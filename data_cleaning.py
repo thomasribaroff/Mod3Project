@@ -11,8 +11,16 @@ Each support function should have an informative name and return the partially c
 """
 import pandas as pd
 
-def support_function_one(example):
-    pass
+def vcp(borough = 'Camden', year='2011', month='01',):
+    
+    data = pd.read_csv('London Crime Data 2011 to 2014/{}-{}-metropolitan-street.csv'.format(year,month))
+    
+    data['LSOA name'].fillna('No location', inplace = True)
+            
+    return len(data.loc[(data['LSOA name'].str.contains("Camden")) & \
+                     ((data['Crime type'] == "Violent crime")|(data['Crime type'] == "Violence and sexual offences"))])/ \
+                            len(data.loc[(data['LSOA name'].str.contains("Camden"))])
+            
 
 def support_function_two(example):
     pass
