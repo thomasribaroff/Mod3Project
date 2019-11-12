@@ -19,7 +19,6 @@ def fillnulls(data):
     data['Latitude'].fillna('No location', inplace = True)
 
 def removenullcols(data):
-    
     data.drop(['Crime ID','Last outcome category','Context'],axis=1)
     
 
