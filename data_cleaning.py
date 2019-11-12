@@ -11,19 +11,16 @@ Each support function should have an informative name and return the partially c
 """
 import pandas as pd
 
-def vcp(borough = 'Camden', year='2011', month='01',):
-    
-    data = pd.read_csv('London Crime Data 2011 to 2014/{}-{}-metropolitan-street.csv'.format(year,month))
+def fillnulls(data):
     
     data['LSOA name'].fillna('No location', inplace = True)
-            
-    return len(data.loc[(data['LSOA name'].str.contains("Camden")) & \
-                     ((data['Crime type'] == "Violent crime")|(data['Crime type'] == "Violence and sexual offences"))])/ \
-                            len(data.loc[(data['LSOA name'].str.contains("Camden"))])
-            
+    data['LSOA code'].fillna('No location', inplace = True)
+    data['Longitude'].fillna('No location', inplace = True)
+    data['Latitude'].fillna('No location', inplace = True)
 
-def support_function_two(example):
-    pass
+def removenullcols(data):
+    data.drop(['Crime ID','Last outcome category','Context'],axis=1)
+    
 
 def support_function_three(example):
     pass
