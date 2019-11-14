@@ -9,7 +9,7 @@ We are evaluating the crime scenario in London's boroughs between 2011 and 2016 
 
 The stakeholders of our analysis will include: 
 •    Govt organisations, policy makers, NGOs who decide resource allocation for strategic decision-making
-•    Representatives from police, law enforcement and investigative agencies to determine tactical methods to tackle         crime 
+•    Representatives from police, law enforcement and investigative agencies to determine tactical methods to tackle crime 
 •    General public for accountability of their local MPs 
 
 The dataset consists of :
@@ -24,13 +24,11 @@ if we find these datasets are not sufficient to answer these questions, we may r
             
 Hypotheses :
 
-1. Crime got proportionately more violent in Camden between 2011 and 2016
-2. Crime got proportionately more violent south of the river than north of the river between 2011 and 2016
-3. Has petty crime increased in this time period?
-4. Is there a higher proportion of male criminals in London compared to the rest of UK?
-5. Is there any significant difference between incidence of crime amongst males 16-24 and females 16-24?
-6. Knife crime has gotten worse over the last 12 months in England and Wales 
-
+1. Crime got proportionately less violent in Camden in October to November 2011 (H0: p1=p2)
+2. Unemployment improved between 2009 and 2010 in London (H0: p1=p2)
+3. Bicycle crime is less common in 2016 than it was in 2015 in London (H0: p1=p2)
+4. Anti-social behaviour across Westminster and Croydon has remain unchanged over time (H0: mean difference = 0) 
+5. Robberies in Westminster went down from Jan 2011 and Jan 2013 (H0: p1=p2)
             
 
 * Three python starter files
