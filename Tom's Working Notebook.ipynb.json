@@ -2,11 +2,11 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 1,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-11-14T08:57:14.689596Z",
-     "start_time": "2019-11-14T08:57:14.682051Z"
+     "end_time": "2019-11-13T17:16:28.165424Z",
+     "start_time": "2019-11-13T17:16:26.322247Z"
     }
    },
    "outputs": [],
@@ -25,7 +25,6 @@
     "import seaborn as sns\n",
     "import matplotlib.pyplot as plt\n",
     "from statsmodels.stats.power import tt_ind_solve_power\n",
-    "import random\n",
     "\n"
    ]
   },
@@ -2159,11 +2158,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 4,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-11-11T17:45:02.485836Z",
-     "start_time": "2019-11-11T17:45:02.465188Z"
+     "end_time": "2019-11-13T16:36:39.772097Z",
+     "start_time": "2019-11-13T16:36:39.751107Z"
     }
    },
    "outputs": [
@@ -2173,7 +2172,7 @@
        "True"
       ]
      },
-     "execution_count": 6,
+     "execution_count": 4,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -2186,39 +2185,45 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2019-11-11T17:45:02.682952Z",
-     "start_time": "2019-11-11T17:45:02.489144Z"
-    }
-   },
+   "execution_count": null,
+   "metadata": {},
    "outputs": [],
-   "source": [
-    "resp = requests.get('https://data.police.uk/api/crimes-street/all-crime?lat=52.629729&lng=-1.131592&date=2017-01')\n",
-    "crime_data = resp.json()"
-   ]
+   "source": []
   },
   {
-   "cell_type": "markdown",
+   "cell_type": "code",
+   "execution_count": null,
    "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
    "source": [
-    "Get a list of random locations in london to sample from 51.3 to 51.6 and -0.3 to 0.1\n",
-    "use API to collect all crimes committed at those locations in a particular month\n",
-    "append number of vehicle crimes committed to a list\n",
-    "do the same for the same locations in a different year\n",
-    "append to a new list\n",
-    "repeat process 30 times\n",
-    "then run welches t test on the two lists of 30 to see if there is a signifigant difference between the means "
+    "#run analysis on the lists of crimes "
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 122,
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "resp = requests.get('https://data.police.uk/api/crimes-at-location?date=2015-02&lat={}&lng={}'.format(value1,value2))\n",
+    "    crime_data = resp.json()\n",
+    "https://data.police.uk/api/crimes-at-location?date=2017-02&lat=52.629729&lng=-1.131592"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-11-14T09:39:24.345855Z",
-     "start_time": "2019-11-14T09:39:24.160791Z"
+     "end_time": "2019-11-13T17:22:19.989746Z",
+     "start_time": "2019-11-13T17:22:19.565920Z"
     }
    },
    "outputs": [
@@ -2226,7 +2231,8 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "51.53386 -0.01059\n"
+      "51.50572\n",
+      "-0.037260000000000015\n"
      ]
     },
     {
@@ -2236,7 +2242,7 @@
      "traceback": [
       "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
       "\u001b[0;31mJSONDecodeError\u001b[0m                           Traceback (most recent call last)",
-      "\u001b[0;32m<ipython-input-122-7c4573adee20>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mx\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0my\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m \u001b[0mresp\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mrequests\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'https://data.police.uk/api/crimes-street/all-crime?lat={}&lng={}&date=2015-01'\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mformat\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mx\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0my\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 6\u001b[0;31m \u001b[0mcrime_data\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mresp\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mjson\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      7\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      8\u001b[0m \u001b[0mlist1\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m[\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m<ipython-input-6-6d0b58c4e304>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      9\u001b[0m     \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mvalue2\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     10\u001b[0m     \u001b[0mresp\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mrequests\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'https://data.police.uk/api/crimes-at-location?date=2015-02&lat={}&lng={}'\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mformat\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mvalue1\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0mvalue2\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 11\u001b[0;31m     \u001b[0mcrime_data\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mresp\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mjson\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     12\u001b[0m     \u001b[0;32mfor\u001b[0m \u001b[0mx\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mrange\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mlen\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcrime_data\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     13\u001b[0m         \u001b[0mcrimes\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mappend\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcrime_data\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0mx\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
       "\u001b[0;32m/opt/anaconda3/lib/python3.7/site-packages/requests/models.py\u001b[0m in \u001b[0;36mjson\u001b[0;34m(self, **kwargs)\u001b[0m\n\u001b[1;32m    895\u001b[0m                     \u001b[0;31m# used.\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    896\u001b[0m                     \u001b[0;32mpass\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 897\u001b[0;31m         \u001b[0;32mreturn\u001b[0m \u001b[0mcomplexjson\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mloads\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mtext\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m**\u001b[0m\u001b[0mkwargs\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    898\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    899\u001b[0m     \u001b[0;34m@\u001b[0m\u001b[0mproperty\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
       "\u001b[0;32m/opt/anaconda3/lib/python3.7/json/__init__.py\u001b[0m in \u001b[0;36mloads\u001b[0;34m(s, encoding, cls, object_hook, parse_float, parse_int, parse_constant, object_pairs_hook, **kw)\u001b[0m\n\u001b[1;32m    346\u001b[0m             \u001b[0mparse_int\u001b[0m \u001b[0;32mis\u001b[0m \u001b[0;32mNone\u001b[0m \u001b[0;32mand\u001b[0m \u001b[0mparse_float\u001b[0m \u001b[0;32mis\u001b[0m \u001b[0;32mNone\u001b[0m \u001b[0;32mand\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    347\u001b[0m             parse_constant is None and object_pairs_hook is None and not kw):\n\u001b[0;32m--> 348\u001b[0;31m         \u001b[0;32mreturn\u001b[0m \u001b[0m_default_decoder\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mdecode\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0ms\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    349\u001b[0m     \u001b[0;32mif\u001b[0m \u001b[0mcls\u001b[0m \u001b[0;32mis\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    350\u001b[0m         \u001b[0mcls\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mJSONDecoder\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
       "\u001b[0;32m/opt/anaconda3/lib/python3.7/json/decoder.py\u001b[0m in \u001b[0;36mdecode\u001b[0;34m(self, s, _w)\u001b[0m\n\u001b[1;32m    335\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    336\u001b[0m         \"\"\"\n\u001b[0;32m--> 337\u001b[0;31m         \u001b[0mobj\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mend\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mraw_decode\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0ms\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0midx\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0m_w\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0ms\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;36m0\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mend\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    338\u001b[0m         \u001b[0mend\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0m_w\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0ms\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mend\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mend\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    339\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mend\u001b[0m \u001b[0;34m!=\u001b[0m \u001b[0mlen\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0ms\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
@@ -2246,79 +2252,77 @@
     }
    ],
    "source": [
-    "drugs_2016 = []\n",
-    "x = round(np.random.rand()*.3+51.3,5)\n",
-    "y = round(np.random.rand()*.4-0.3,5)\n",
-    "print(x,y)\n",
-    "resp = requests.get('https://data.police.uk/api/crimes-street/all-crime?lat={}&lng={}&date=2016-01'.format(x,y))\n",
-    "crime_data = resp.json()\n",
+    "from random import seed\n",
+    "from random import random\n",
+    "crimes = []\n",
+    "crimes2 = []\n",
+    "for _ in range(100):\n",
+    "    value1 = round(random()*3/10,5) + 51.3\n",
+    "    value2 = round(random()*4/10,5) - 0.3\n",
+    "    print(value1)\n",
+    "    print(value2)\n",
+    "    resp = requests.get('https://data.police.uk/api/crimes-at-location?date=2015-02&lat={}&lng={}'.format(value1,value2))\n",
+    "    crime_data = resp.json()\n",
+    "    for x in range(len(crime_data)):\n",
+    "        crimes.append(crime_data[x])\n",
+    "    resp2 = requests.get('https://data.police.uk/api/crimes-at-location?date=2016-02&lat={}&lng={}'.format(value1,value2))\n",
+    "    crime_data2 = resp.json()\n",
+    "    for x in range(len(crime_data2)):\n",
+    "        crimes2.append(crime_data2[x])\n",
     "\n",
-    "list1 = []\n",
-    "for f in range(len(crime_data)):\n",
-    "    list1.append(crime_data[f]['category'])\n",
-    "z1 = list1.count('drugs')\n",
-    "drugs_2016.append(z1)\n",
-    "\n"
+    "#create a list of random locations in london 51.3 to 51.6, -0.3 to 0.1\n",
+    "#iterate the api over these locations and append the crimes to a list for two different years\n",
+    "#now we have a random samples of crimes that month in London!"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "resp = requests.get('https://data.police.uk/api/crimes-street/all-crime?lat={}&lng={}&date=2017-01'.format(x,y))\n",
-    "crime_data2 = resp.json()"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 115,
+   "execution_count": 4,
    "metadata": {
     "ExecuteTime": {
-     "end_time": "2019-11-14T09:31:36.935645Z",
-     "start_time": "2019-11-14T09:31:36.923722Z"
+     "end_time": "2019-11-13T17:22:04.386455Z",
+     "start_time": "2019-11-13T17:22:04.370289Z"
+    }
+   },
+   "outputs": [
+    {
+     "ename": "IndexError",
+     "evalue": "list index out of range",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mIndexError\u001b[0m                                Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-4-beff77cbc8f4>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mcrimes2\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;36m5\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;31mIndexError\u001b[0m: list index out of range"
+     ]
+    }
+   ],
+   "source": [
+    "crimes2[5]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2019-11-13T16:38:18.802810Z",
+     "start_time": "2019-11-13T16:38:18.795072Z"
     }
    },
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "14"
+       "8"
       ]
      },
-     "execution_count": 115,
+     "execution_count": 14,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
    "source": []
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 24,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2019-11-14T09:01:10.858152Z",
-     "start_time": "2019-11-14T09:01:10.845707Z"
-    }
-   },
-   "outputs": [
-    {
-     "ename": "NameError",
-     "evalue": "name 'crime_data' is not defined",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
-      "\u001b[0;32m<ipython-input-24-6b3db1dbb039>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mcrime_data\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
-      "\u001b[0;31mNameError\u001b[0m: name 'crime_data' is not defined"
-     ]
-    }
-   ],
-   "source": [
-    "crime_data"
-   ]
   },
   {
    "cell_type": "code",
