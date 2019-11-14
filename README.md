@@ -28,7 +28,7 @@ Hypotheses :
 2. Unemployment improved between 2009 and 2010 in London (H0: p1=p2)
 3. Bicycle crime is less common in 2016 than it was in 2015 in London (H0: p1=p2)
 4. Anti-social behaviour across Westminster and Croydon has remain unchanged over time (H0: mean difference = 0) 
-
+5. Robberies in Westminster went down from Jan 2011 and Jan 2013 (H0: p1=p2)
             
 
 * Three python starter files
