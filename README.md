@@ -3,6 +3,8 @@
 This repo contains:
 * Description of the project in a PDF : 
 
+LOOK AT THE MASTER NOTEBOOK
+
 We are evaluating the crime scenario in London's boroughs between 2011 and 2016 and exploring the impact of certain influences in elevating / reducing the levels of crime. These influences include the levels of unemployment in the population of London, the levels of unemployment by age, gender, ethnic group and disability, and the number of NEET (not in education, employment or training) youth, to name a few. 
 
 The stakeholders of our analysis will include: 
@@ -28,6 +30,7 @@ Hypotheses :
 4. Is there a higher proportion of male criminals in London compared to the rest of UK?
 5. Is there any significant difference between incidence of crime amongst males 16-24 and females 16-24?
 6. Knife crime has gotten worse over the last 12 months in England and Wales 
+
             
 
 * Three python starter files
