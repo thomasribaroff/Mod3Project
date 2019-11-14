@@ -20,9 +20,9 @@ def vcp(borough = 'Camden', year='2011', month='01',):
     
     dc.fillnulls(data)
             
-    return len(data.loc[(data['LSOA name'].str.contains("Camden")) & \
+    return len(data.loc[(data['LSOA name'].str.contains(borough)) & \
                      ((data['Crime type'] == "Violent crime")|(data['Crime type'] == "Violence and sexual offences"))])/ \
-                            len(data.loc[(data['LSOA name'].str.contains("Camden"))])
+                            len(data.loc[(data['LSOA name'].str.contains(borough))])
             
 
 # def create_sample_dists(cleaned_data, y_var=None, categories=[]):
