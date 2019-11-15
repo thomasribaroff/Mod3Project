@@ -122,8 +122,8 @@ def plot_pdfs(cohen_d=2):
     
     cohen_d: number of standard deviations between the means
     """
-    group1 = scipy.stats.norm(0, 1)
-    group2 = scipy.stats.norm(cohen_d, 1)
+    a = scipy.stats.norm(0, 1)
+    b = scipy.stats.norm(cohen_d, 1)
     xs, ys = evaluate_PDF(group1)
     plt.fill_between(xs, ys, label='Group1', color='#ff2289', alpha=0.7)
 
@@ -159,7 +159,7 @@ def plot_pdfs(cohen_d=2):
         
 def visualize_t(t_stat, n_a, n_b):
    
-    initialize a matplotlib "figure"
+
     fig = plt.figure(figsize=(8,5))
     ax = fig.gca()
     # generate points on the x axis between -4 and 4:
@@ -180,7 +180,7 @@ def visualize_t(t_stat, n_a, n_b):
     plt.show()
     return None
 
-t_crit = np.round(stats.t.ppf(1 - 0.05, df=df),3)
+# t_crit = np.round(stats.t.ppf(1 - 0.05, df=df),3)
 
           
 # Visualize p_value
